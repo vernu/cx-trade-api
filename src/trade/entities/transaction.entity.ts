@@ -30,4 +30,7 @@ const transactionSchema: Schema<Transaction> = new Schema(
   }
 )
 
+transactionSchema.index({ symbol: 1 });
+transactionSchema.index({ symbol: 1, price: 1, quantity: 1 });
+
 export default model<Transaction>('Transaction', transactionSchema)
